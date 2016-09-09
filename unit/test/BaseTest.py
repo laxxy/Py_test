@@ -9,7 +9,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 class BaseTest(unittest.TestCase):
     wait = None
     driver_var = None
-    snp = None
     currentResult = unittest.TestResult()
 
     @classmethod
@@ -30,6 +29,10 @@ class BaseTest(unittest.TestCase):
     @staticmethod
     def get_driver():
         return BaseTest.driver_var
+
+    @staticmethod
+    def get_wait():
+        return BaseTest.wait
 
 
 if __name__ == "__main__":

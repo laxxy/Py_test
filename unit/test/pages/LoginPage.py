@@ -1,14 +1,15 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from unit.test.BaseTest import BaseTest
+from unit.test.pages.BasePage import BasePage
 import allure
 
 
-class LoginPage:
-
+class LoginPage(BasePage):
     def __init__(self):
-        self.wait = BaseTest.wait
-        self.driver = BaseTest.driver_var
+        super().__init__()
+        self.wait = BaseTest.get_wait()
+        self.driver = BaseTest.get_driver()
 
     @allure.step("1")
     def step_1(self):
