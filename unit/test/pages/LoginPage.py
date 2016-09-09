@@ -18,3 +18,9 @@ class LoginPage(BasePage):
         until.click()
         until = self.wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, "a[href='#sign-up']")))
         until.click()
+
+    @allure.step("2")
+    def step_test(self):
+        self.driver.get("http://ucraft.com")
+        element = self.driver.find_element_by_xpath("//a[text()='All']")
+        super().scrollToElement(element)
