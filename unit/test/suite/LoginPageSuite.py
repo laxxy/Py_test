@@ -9,7 +9,7 @@ Assert = BaseTest.BaseTest
 class LoginPageSuite(BaseTest.BaseTest):
     def test_4(self):
         main_page = LoginPage.LoginPage()
-        main_page.step_test()
+        main_page.step_1()
 
     # def test_5(self):
     #     main_page = LoginPage.LoginPage()

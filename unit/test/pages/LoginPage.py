@@ -13,11 +13,14 @@ class LoginPage(BasePage):
 
     @allure.step("1")
     def step_1(self):
-        self.driver.get("http://ucraft.com")
-        until = self.wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, '.sign-in')))
-        until.click()
-        until = self.wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, "a[href='#sign-up']")))
-        until.click()
+        self.driver.get("http://ts5.travian.ru/login.php")
+        until = self.wait.until(
+            ec.visibility_of_element_located((By.CSS_SELECTOR, '.accountNameOrEmailAddress~td input')))
+        until.send_keys("laxx")
+        selector = self.driver.find_element_by_css_selector('.pass td input')
+        selector.send_keys("19765328")
+        css_selector = self.driver.find_element_by_css_selector('.button-content')
+        css_selector.click()
 
     @allure.step("2")
     def step_test(self):
